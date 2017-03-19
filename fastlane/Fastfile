@@ -1,0 +1,3 @@
+lane :test do
+  set_jira_fix_version
+end
