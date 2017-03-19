@@ -1,6 +1,6 @@
 # set_jira_fix_version plugin
 
-[![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-set_jira_fix_version)
+[![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-set_jira_fix_version) [![Gem Version](https://badge.fury.io/rb/fastlane-plugin-set_jira_fix_version.svg)](https://badge.fury.io/rb/fastlane-plugin-set_jira_fix_version)
 
 ## Getting Started
 
@@ -12,9 +12,10 @@ fastlane add_plugin set_jira_fix_version
 
 ## About set_jira_fix_version
 
-Adds fix version to specified JIRA issues. Creates version if needed
+This plugin allow you to easily add fix version to specified JIRA issues. It contains two actions:
 
-This action allows to easily add fix version to specified JIRA issues. It supports basic and cookie authorization. If JIRA account password won't be specified in parameters (recommended) it will ask it at first launch and save in a macOS keychain. If JIRA version with specified name is not created, this action will create it. The action can take issue IDs from lane context (`FL_JIRA_ISSUE_IDS`) and many other JIRA related parameters from environment variables.
+* `jira_issue_keys_from_changelog` gathers your issue keys that you left in commit names and supply them to `set_jira_fix_version`.
+* `set_jira_fix_version` create version if needed and updates specified JIRA issues with this version. It supports basic and cookie authorization. If JIRA account password won't be specified in parameters (recommended) it will ask it at first launch and save in a macOS keychain. If JIRA version with specified name is not created, this action will create it. The action can take issue IDs from lane context (`FL_JIRA_ISSUE_IDS`) and many other JIRA related parameters from environment variables.
 
 ## [WIP]: Example
 
