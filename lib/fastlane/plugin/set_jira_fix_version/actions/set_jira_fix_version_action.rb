@@ -10,6 +10,8 @@ module Fastlane
         use_cookies  = params[:use_cookies]
         project_id   = params[:project_key]
         version_name = params[:version_name]
+        context_path = params[:context_path]
+
         issue_ids    = self.issue_ids_from_param(params)
 
         account_manager = self.account_manager(params)
@@ -20,6 +22,7 @@ module Fastlane
           site: site,
           auth_type: auth_type,
           use_cookies: use_cookies,
+          context_path: context_path,
           username: username,
           password: password
         }
@@ -134,6 +137,11 @@ module Fastlane
                                        description: "Password for JIRA",
                                        optional: true,
                                        sensitive: true),
+          FastlaneCore::ConfigItem.new(key: :context_path,
+                                       env_name: "FL_JIRA_CONTEXT_PATH"
+                                       optional: true,
+                                       description: "Context path for JIRA instance",
+                                       default_value: ""),
           FastlaneCore::ConfigItem.new(key: :auth_type,
                                        description: "Authorization type to use. Currently supported: :basic or :cookie",
                                        default_value: :basic),
